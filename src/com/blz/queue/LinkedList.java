@@ -12,6 +12,7 @@ public class LinkedList {
 
             if (temp == null) {
                 temp = head = newNode;
+                return newNode;
             }
 
             temp.next = newNode;
@@ -27,4 +28,25 @@ public class LinkedList {
                 newNode = newNode.next;
             }
         }
+    public int dequeue(int data) {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+        int front = head.data;
+
+        if (head == temp) {
+            temp = null;
+        }
+        head = head.next;
+        return front;
+    }
+    public int peak(int data) {
+        if (isEmpty()) {
+            System.out.println("Empty queue");
+            return -1;
+        }
+        return head.data;
+    }
+
 }
