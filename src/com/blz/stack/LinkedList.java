@@ -29,4 +29,26 @@ public class LinkedList {
             }
         }
     }
+    public Node peak() {
+        Node newNode = head;
+        if (head == null) {
+            System.out.println("List is empty");
+        } else {
+            while (newNode.next != null) {
+                newNode = newNode.next;
+            }
+        }
+        return newNode;
+    }
+    public Node pop() {
+        Node newNode = this.head;
+        if (head == null) {
+            while (newNode.next != null) {
+                System.out.println("Popped Element : " + newNode.next.next.data);
+                newNode = newNode.next;
+                newNode.next = null;
+            }
+        }
+        return newNode;
+    }
 }
